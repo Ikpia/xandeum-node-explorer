@@ -16,7 +16,6 @@ It connects to public pNodes over **pRPC** and visualizes key metrics such as CP
 	- Visual charts for CPU load and storage distribution.
 - Provides a polished **light/dark theme toggle**, subtle animations, and search/filter tools for better UX.
 
-This matches the bounty brief: *“Create a web-based analytics platform for Xandeum pNodes… retrieve a list of all pNodes appearing in gossip using pRPC calls and display the information clearly.”*
 
 ---
 
@@ -28,7 +27,6 @@ The app interacts with pNodes exclusively through documented pRPC methods:
 - `get-pods-with-stats` – richer gossip view (when available on v0.7.0+ nodes).
 - `get-stats` – detailed metrics for a single pNode.
 
-These are called from a small **Node.js proxy** (or Vercel serverless functions) using the official [`xandeum-prpc`](https://github.com/DavidNzube101/xandeum-prpc-js) client. The React frontend never talks directly to pNodes, which avoids browser CORS issues.
 
 ---
 
@@ -107,20 +105,9 @@ npm run preview
 
 ---
 
-## Deploying to Vercel
+## Deployed to Vercel
 
-1. Push this repository to GitHub.
-2. In Vercel, click **New Project** → **Import Git Repository**.
-3. Framework preset: **Vite**.
-4. Build command: `npm run build`.
-5. Output directory: `dist`.
-
-Vercel will:
-
-- Serve the built React app from `dist/`.
-- Expose the functions in `api/node-info/[ip].ts` and `api/pods-from-seed/[ip].ts` at `/api/...`.
-
-Your live URL is what you submit for the bounty.
+You can view the explorer via the deployed link `https://xandeum-node-explorer.vercel.app` and wait for 5 seconds for everything to completely load
 
 ---
 
@@ -152,5 +139,3 @@ To point the dashboard at different networks or seed nodes, adjust `NODE_IPS` an
 	- Auto-refresh with a countdown timer to next refresh.
 	- Light/dark theme toggle with smooth transitions.
 	- Subtle hover animations on cards and table rows.
-
-These elements are aimed at maximizing clarity, usability, and a “dashboard-quality” feel for the bounty reviewers.
