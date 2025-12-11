@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xandeum Node Explorer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              xan: {
+                900: '#0f172a',
+                800: '#1e293b',
+                700: '#334155',
+                500: '#06b6d4',
+                400: '#22d3ee',
+                300: '#67e8f9',
+              }
+            },
+            fontFamily: {
+              mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body.theme-dark {
+        background-color: #0f172a;
+        color: #e2e8f0;
+      }
+
+      body.theme-light {
+        background-color: #f3f4f6;
+        color: #020617;
+      }
+
+      body {
+        transition: background-color 0.4s ease, color 0.4s ease;
+      }
+
+      /* Light mode overrides for card-like elements */
+      body.theme-light .bg-xan-900,
+      body.theme-light .bg-xan-800,
+      body.theme-light .bg-xan-700,
+      body.theme-light .bg-xan-900\/50,
+      body.theme-light .bg-xan-900\/30,
+      body.theme-light .bg-xan-700\/30 {
+        background-color: #ffffff !important;
+      }
+
+      body.theme-light .border-xan-700,
+      body.theme-light .border-xan-800 {
+        border-color: #e5e7eb !important;
+      }
+
+      body.theme-light .text-gray-200,
+      body.theme-light .text-gray-300 {
+        color: #020617 !important;
+      }
+
+      body.theme-light .text-gray-400 {
+        color: #4b5563 !important;
+      }
+
+      body.theme-light .text-gray-500 {
+        color: #6b7280 !important;
+      }
+
+      /* Make brand/title text readable on light header */
+      body.theme-light .text-white {
+        color: #020617 !important;
+      }
+
+      body.theme-light .shadow-lg {
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.16);
+      }
+      /* Custom scrollbar for webkit */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1e293b; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #334155; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #475569; 
+      }
+
+      body.theme-light ::-webkit-scrollbar-track {
+        background: #e5e7eb;
+      }
+
+      body.theme-light ::-webkit-scrollbar-thumb {
+        background: #cbd5f5;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

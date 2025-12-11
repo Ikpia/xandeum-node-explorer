@@ -1,0 +1,5 @@
+{
+  "name": "Xandeum Node Explorer",
+  "description": "Real-time analytics dashboard for Xandeum pNodes, visualizing network statistics, storage utilization, and node health via direct RPC connections.",
+  "requestFramePermissions": []
+}
